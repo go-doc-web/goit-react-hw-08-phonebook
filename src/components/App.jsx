@@ -7,13 +7,14 @@ import { selectIsLoading, selectError } from '../Redux/selectors';
 // import ContactFilter from './ContactFilter/ContactFilter';
 // import ContactsForm from './ContactsForm/ContactsForm';
 import ContactsPages from '../pages/ContactsPages';
+import NavBar from './AppBar/AppBar';
 
-import css from './App.module.css';
+// import css from './App.module.css';
 
-const styleApp = {
-  fontSize: 32,
-  color: '#010101',
-};
+// const styleApp = {
+//   fontSize: 32,
+//   color: '#010101',
+// };
 
 const App = () => {
   const dispatch = useDispatch();
@@ -38,6 +39,7 @@ const App = () => {
     <>
       {isLoading && !error && <p>Loading</p>}
       <ContactsPages />
+      {/* <NavBar /> */}
     </>
     // {/* <ContactsList /> */}
     //     </div>
