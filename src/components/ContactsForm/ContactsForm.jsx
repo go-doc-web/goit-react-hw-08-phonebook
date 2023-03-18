@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 //Material UA
-import { TextField, Typography } from '@mui/material';
+import { TextField, Typography, CssBaseline, Box, Grid } from '@mui/material';
 import { addContact } from '../../Redux/operations';
 import { getContacts } from '../../Redux/selectors';
 
@@ -52,6 +52,41 @@ const ContactsForm = () => {
       >
         My Phonebook
       </Typography>
+      <CssBaseline />
+      <Box component="form" noValidate onSubmit={handleSubmit}>
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <TextField
+              // error={nameError}
+
+              type="text"
+              required
+              fullWidth
+              id="name"
+              label="Fedor Fedorov"
+              name="name"
+              variant="outlined"
+              onChange={e => setName(e.target.value)}
+              value={name}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              type="tel"
+              // error={phoneError}
+              required
+              fullWidth
+              id="number"
+              label="Phone"
+              name="phone"
+              variant="outlined"
+              onChange={e => setPhone(e.target.value)}
+              value={phone}
+              onKeyPress={e => !/[0-9]/.test(e.key) && e.preventDefault()}
+            />
+          </Grid>
+        </Grid>
+      </Box>
     </>
   );
 };
