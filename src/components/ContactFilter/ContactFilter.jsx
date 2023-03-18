@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 
-import { setFilter } from '../../Redux/filter';
-import { getFilter } from '../../Redux/selectors';
+import { setFilter } from '../../Redux/contacts/filter';
+import { getFilter } from '../../Redux/contacts/selector';
 
 import { TextField, Box, Typography } from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';

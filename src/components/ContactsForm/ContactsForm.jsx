@@ -10,8 +10,8 @@ import {
   Grid,
   Button,
 } from '@mui/material';
-import { addContact } from '../../Redux/operations';
-import { getContacts } from '../../Redux/selectors';
+import { addContact } from '../../Redux/contacts/operations';
+import { getContacts } from '../../Redux/contacts/selector';
 
 import css from './ContactsForm.module.scss';
 

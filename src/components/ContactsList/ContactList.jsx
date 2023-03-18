@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { getFilteredContacts } from '../../Redux/selectors';
-import { deleteContact } from '../../Redux/operations';
+import { getFilteredContacts } from '../../Redux/contacts/selector';
+import { deleteContact } from '../../Redux/contacts/operations';
 
 import { Box, Typography, IconButton } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
