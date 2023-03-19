@@ -13,7 +13,7 @@ import {
 import { addContact } from '../../Redux/contacts/operations';
 import { getContacts } from '../../Redux/contacts/selector';
 
-import css from './ContactsForm.module.scss';
+// import css from './ContactsForm.module.scss';
 
 const ContactsForm = () => {
   const [name, setName] = useState('');

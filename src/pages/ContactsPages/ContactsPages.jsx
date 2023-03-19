@@ -4,9 +4,9 @@ import 'react-toastify/dist/ReactToastify.css';
 //Material UI
 import { Container, Grid } from '@mui/material';
 
-import ContactForm from '../components/ContactsForm/ContactsForm';
-import ContactFilter from '../components/ContactFilter/ContactFilter';
-import ContactList from '../components/ContactsList/ContactList';
+import ContactForm from '../../components/ContactsForm/ContactsForm';
+import ContactFilter from '../../components/ContactFilter/ContactFilter';
+import ContactList from '../../components/ContactsList/ContactList';
 
 const ContactsPages = () => {
   return (

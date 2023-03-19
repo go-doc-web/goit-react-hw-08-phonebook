@@ -5,7 +5,7 @@ import { deleteContact } from '../../Redux/contacts/operations';
 import { Box, Typography, IconButton } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-import css from './ContactsList.module.css';
+// import css from './ContactsList.module.css';
 
 const ContactsList = () => {
   const filteredContacts = useSelector(getFilteredContacts);

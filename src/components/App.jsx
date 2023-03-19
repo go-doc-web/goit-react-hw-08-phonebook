@@ -7,10 +7,12 @@ import { useAuth } from 'hooks/useAuth';
 import PrivateRoute from './PrivateRoute';
 import { Layout } from './Layout';
 
-// const HomePages = lazy(() => import('../pages/HomePages'));
-// const RegisterPages = lazy(() => import('../pages/RegisterPages'));
-// const LoginPages = lazy(() => import('../pages/LoginPages'));
-const ContactsPages = lazy(() => import('../pages/ContactsPages'));
+const HomePages = lazy(() => import('../pages/HomePages/HomePages'));
+const RegisterPages = lazy(() => import('../pages/RegisterPages'));
+const LoginPages = lazy(() => import('../pages/LoginPages/LoginPages'));
+const ContactsPages = lazy(() =>
+  import('../pages/ContactsPages/ContactsPages')
+);
 
 const App = () => {
   const dispatch = useDispatch();
