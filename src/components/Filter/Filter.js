@@ -1,8 +1,8 @@
 import { FormControl } from '@mui/material';
 import { StyledInput, StyledInputLable } from 'components/styled/styledMui';
 import { useDispatch, useSelector } from 'react-redux';
-import { setFilter } from 'redux/contacts/filter';
-import { getFilter } from 'redux/contacts/selector';
+import { setFilter } from 'Redux/contacts/filter';
+import { getFilter } from 'Redux/contacts/selector';
 
 const Filter = () => {
   const dispatch = useDispatch();

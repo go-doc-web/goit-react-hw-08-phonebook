@@ -7,8 +7,8 @@ import {
 import { useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/contacts/operations';
-import { getContacts } from 'redux/contacts/selector';
+import { addContact } from 'Redux/contacts/operations';
+import { getContacts } from 'Redux/contacts/selector';
 
 const ContactForm = () => {
   const [name, setName] = useState('');

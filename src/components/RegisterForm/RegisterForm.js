@@ -12,7 +12,7 @@ import { ToastContainer } from 'react-toastify';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { register } from 'redux/auth/operations';
+import { register } from 'Redux/auth/operations';
 
 const RegisterForm = () => {
   const [name, setName] = useState('');

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteContact } from 'redux/contacts/operations';
-import { getFilteredContacts } from 'redux/contacts/selector';
+import { deleteContact } from 'Redux/contacts/operations';
+import { getFilteredContacts } from 'Redux/contacts/selector';
 import { IconButton } from 'components/styled/styledMui';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { List, ListItem, Typography } from '@mui/material';

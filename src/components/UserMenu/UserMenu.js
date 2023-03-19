@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { logOut } from 'redux/auth/operations';
+import { logOut } from 'Redux/auth/operations';
 import { useAuth } from 'hooks/useAuth';
 import { Box, Typography } from '@mui/material';
 import { ColorButtonMenu } from 'components/styled/styledMui';
