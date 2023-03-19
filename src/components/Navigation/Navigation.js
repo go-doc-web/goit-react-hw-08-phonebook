@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
-import { useAuth } from '../../hooks/useAuth';
+import { useAuth } from 'hooks/useAuth';
 import { List, ListItem } from '@mui/material';
-import { Button } from '@mui/material';
+import { ColorLinkButton } from 'components/styled/styledMui';
 
 const Navigation = () => {
   const { isLoggedIn } = useAuth();
@@ -9,16 +9,16 @@ const Navigation = () => {
     <nav>
       <List sx={{ display: 'flex' }}>
         <ListItem color="secondary">
-          <Button component={NavLink} to="/" color="inherit">
+          <ColorLinkButton component={NavLink} to="/" color="inherit">
             Home
-          </Button>
+          </ColorLinkButton>
         </ListItem>
 
         {isLoggedIn && (
           <ListItem>
-            <Button component={NavLink} to="/contacts" color="inherit">
+            <ColorLinkButton component={NavLink} to="/contacts" color="inherit">
               Contacts
-            </Button>
+            </ColorLinkButton>
           </ListItem>
         )}
       </List>

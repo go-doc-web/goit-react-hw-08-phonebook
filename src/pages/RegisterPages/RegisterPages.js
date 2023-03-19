@@ -8,7 +8,7 @@ const RegisterPages = () => {
       <Helmet>
         <title>register</title>
       </Helmet>
-      <Section title="Sing Up">
+      <Section>
         <RegisterForm />
       </Section>
     </>

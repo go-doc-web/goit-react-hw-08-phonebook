@@ -1,4 +1,5 @@
-import { Typography, Box } from '@mui/material';
+import { Box } from '@mui/material';
+import Section from 'components/Section/Section';
 
 const HomePages = () => {
   return (
@@ -11,16 +12,7 @@ const HomePages = () => {
         flexDirection: 'column',
       }}
     >
-      <Typography
-        component="h2"
-        variant="h3"
-        sx={{
-          textAlign: 'center',
-          marginBottom: 2,
-        }}
-      >
-        Welcome Phonebook
-      </Typography>
+      <Section title="Welcome to Phone Contacts Data"></Section>
     </Box>
   );
 };

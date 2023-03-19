@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import AppBarComponent from '../components/AppBar/AppBar';
+import AppBarComponent from './AppBarComponent';
 import { Suspense } from 'react';
 import { createTheme } from '@mui/material/styles';
 import { ThemeProvider } from '@mui/system';

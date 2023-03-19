@@ -1,7 +1,9 @@
 import { useDispatch } from 'react-redux';
-import { logOut } from '../../Redux/auth/operations';
-import { useAuth } from '../../hooks/useAuth';
-import { Box, Typography, Button } from '@mui/material';
+import { logOut } from 'redux/auth/operations';
+import { useAuth } from 'hooks/useAuth';
+import { Box, Typography } from '@mui/material';
+import { ColorButtonMenu } from 'components/styled/styledMui';
+import ExitToAppRoundedIcon from '@mui/icons-material/ExitToAppRounded';
 
 const UserMenu = () => {
   const dispatch = useDispatch();
@@ -15,9 +17,9 @@ const UserMenu = () => {
       }}
     >
       <Typography>Welcome, {user.name}!</Typography>
-      <Button variant="outlined" onClick={() => dispatch(logOut())}>
-        Logout
-      </Button>
+      <ColorButtonMenu variant="outlined" onClick={() => dispatch(logOut())}>
+        <ExitToAppRoundedIcon />
+      </ColorButtonMenu>
     </Box>
   );
 };

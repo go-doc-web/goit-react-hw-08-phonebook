@@ -1,14 +1,17 @@
-import AuthNav from '../AuthNav/AuthNav';
-import Navigation from '../Navigation/Navigation';
-import UserMenu from '../UserMenu/UserMenu';
-import { useAuth } from '../../hooks/useAuth';
+import AuthNav from 'components/AuthNav';
+import Navigation from 'components/Navigation';
+import UserMenu from 'components/UserMenu';
+import { useAuth } from 'hooks/useAuth';
 
 import { AppBar, Box, Container } from '@mui/material';
 
-const NavBar = () => {
+const AppBarComponent = () => {
   const { isLoggedIn } = useAuth();
   return (
-    <AppBar sx={{ pt: '20px', pb: '20px' }} position="static">
+    <AppBar
+      sx={{ pt: '10px', pb: '10px', backgroundColor: 'blue' }}
+      position="static"
+    >
       <Container maxWidth="lg">
         <Box
           sx={{
@@ -23,4 +26,4 @@ const NavBar = () => {
     </AppBar>
   );
 };
-export default NavBar;
+export default AppBarComponent;

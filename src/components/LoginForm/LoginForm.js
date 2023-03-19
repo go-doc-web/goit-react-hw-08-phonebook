@@ -1,10 +1,17 @@
-import { Visibility, VisibilityOff } from '@mui/icons-material';
-import { Box, FormControl, IconButton, InputAdornment } from '@mui/material';
+// import { Visibility, VisibilityOff } from '@mui/icons-material';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import { ToastContainer } from 'react-toastify';
 import {
-  ColorButton,
-  StyledInput,
-  StyledInputLable,
-} from 'components/styled/styledMui';
+  Box,
+  CssBaseline,
+  Avatar,
+  Typography,
+  Grid,
+  TextField,
+  Container,
+  Button,
+} from '@mui/material';
+
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operations';
@@ -12,7 +19,7 @@ import { logIn } from 'redux/auth/operations';
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
+
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
@@ -20,74 +27,93 @@ const LoginForm = () => {
     dispatch(logIn({ email, password }));
   };
 
-  const handleClickShowPassword = () => setShowPassword(show => !show);
-
-  const handleMouseDownPassword = event => {
-    event.preventDefault();
-  };
-
   return (
-    <Box
-      component="form"
+    <Container
+      component="main"
+      maxWidth="xs"
       sx={{
-        width: '48ch',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        mb: '32px',
-        ml: 'auto',
-        mr: 'auto',
+        marginTop: 4,
       }}
-      autoComplete="off"
-      onSubmit={handleSubmit}
     >
-      <FormControl
-        sx={{ width: '100%' }}
-        variant="standard"
-        required
-        autoComplete="on"
-      >
-        <StyledInputLable htmlFor="standard-adornment-email">
-          Email
-        </StyledInputLable>
-        <StyledInput
-          id="standard-adornment-email"
-          variant="standard"
-          type="email"
-          value={email}
-          name="email"
-          onChange={e => setEmail(e.target.value)}
-        />
-      </FormControl>
-      <FormControl
-        sx={{ width: '100%' }}
-        variant="standard"
-        required
-        autoComplete="on"
-      >
-        <StyledInputLable htmlFor="standard-adornment-password">
-          Password
-        </StyledInputLable>
-        <StyledInput
-          id="standard-adornment-password"
-          type={showPassword ? 'text' : 'password'}
-          onChange={e => setPassword(e.target.value)}
-          endAdornment={
-            <InputAdornment position="end">
-              <IconButton
-                aria-label="toggle password visibility"
-                onClick={handleClickShowPassword}
-                onMouseDown={handleMouseDownPassword}
-              >
-                {showPassword ? <VisibilityOff /> : <Visibility />}
-              </IconButton>
-            </InputAdornment>
-          }
-        />
-      </FormControl>
+      <Box
+        sx={{
+          padding: 4,
+          bgcolor: '#fff',
+          borderRadius: 4,
 
-      <ColorButton type="submit">Log In</ColorButton>
-    </Box>
+          '&:hover': { boxShadow: '0px 0px 42px -20px rgba(0,0,0,0.3)' },
+        }}
+      >
+        <CssBaseline />
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <Avatar
+            sx={{
+              m: 1,
+              bgcolor: 'blue',
+            }}
+          >
+            <LockOutlinedIcon />
+          </Avatar>
+
+          <Typography component="h1" variant="h5">
+            Sign In
+          </Typography>
+
+          <Box
+            component="form"
+            noValidate
+            onSubmit={handleSubmit}
+            sx={{ mt: 3 }}
+          >
+            <Grid container spacing={2}>
+              <Grid item xs={12}>
+                <TextField
+                  onChange={e => setEmail(e.target.value)}
+                  required
+                  type="email"
+                  fullWidth
+                  id="email"
+                  label="Email"
+                  name="email"
+                  autoComplete="email"
+                  variant="standard"
+                />
+              </Grid>
+
+              <Grid item xs={12}>
+                <TextField
+                  onChange={e => setPassword(e.target.value)}
+                  required
+                  fullWidth
+                  name="password"
+                  label="Password"
+                  type="password"
+                  id="password"
+                  autoComplete="new-password"
+                  variant="standard"
+                />
+              </Grid>
+            </Grid>
+
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2, backgroundColor: 'blue' }}
+            >
+              Sign In
+            </Button>
+          </Box>
+        </Box>
+      </Box>
+      <ToastContainer />
+    </Container>
   );
 };
 
